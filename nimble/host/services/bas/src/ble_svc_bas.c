@@ -118,17 +118,15 @@ ble_svc_bas_on_gap_connect(uint16_t conn_handle)
  */
 int
 ble_svc_bas_battery_level_set(uint8_t level) {
-    int rc = 0;
     if (level > 100)
 	level = 100;
     if (ble_svc_bas_battery_level != level) {
 	ble_svc_bas_battery_level = level;
 #if MYNEWT_VAL(BLE_SVC_BAS_BATTERY_LEVEL_NOTIFY_ENABLE) > 0
-	rc = ble_gattc_notify(ble_svc_bas_conn_handle,
-			      ble_svc_bas_battery_handle);
+	ble_gatts_chr_updated(ble_svc_bas_battery_handle);
 #endif
     }
-    return rc;
+    return 0;
 }
 
 /**
