@@ -24,6 +24,8 @@ repo.versions:
     "0-dev": "0.0.0"
     "0-latest": "0.0.0"
 
+    "0-zoo": "development"
+
 repo.newt_compatibility:
     0.0.0:
         1.1.0: good
