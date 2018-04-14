@@ -22,6 +22,7 @@
 
 #include <inttypes.h>
 #include "host/ble_uuid.h"
+#include "os/os_mbuf.h"
 
 #ifdef __cplusplus
 extern "C" {
